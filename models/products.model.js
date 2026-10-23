@@ -41,7 +41,7 @@ export async function select() {
   }
 }
 
-export async function selectById() {
+export async function selectById(id) {
 
   let connection;
   const query = "SELECT * FROM productos WHERE id = ?";
