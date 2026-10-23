@@ -49,7 +49,7 @@ export async function selectById(id) {
   try {
     connection = await db.getConnection();
     const producto = await connection.query(query, [id]);
-    return producto;
+    return producto[0][0];
   } catch (err) {
     console.error("Error al consultar: ", err);
   } finally {
