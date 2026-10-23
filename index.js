@@ -3,8 +3,7 @@ import cors from "cors";
 import productsRouter from "./routers/products.routes.js";
 
 const app = express();
-global.ENV = process.env;
-const PORT = ENV.PORT;
+const ENV = process.env;
 app.use(cors());
 
 app.use(express.json());
