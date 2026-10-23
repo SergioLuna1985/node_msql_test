@@ -6,6 +6,11 @@ export const getAllProducts = async (req, res) => {
     res.status(200).json(await productsServices.getAllProducts());
 }
 
+export const getProduct = async (req, res) => {
+    const { id } = req.params;
+    res.status(200).json(await productsServices.getProductById(parseInt(id)));
+}
+
 export const getProductsByCategory = async (req, res) => {
   const { categoryId } = req.params;
   res.status(200).json(await productsServices.getProductsByCategory(parseInt(categoryId)));

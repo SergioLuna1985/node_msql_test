@@ -41,6 +41,22 @@ export async function select() {
   }
 }
 
+export async function selectById() {
+
+  let connection;
+  const query = "SELECT * FROM productos WHERE id = ?";
+
+  try {
+    connection = await db.getConnection();
+    const producto = await connection.query(query, [id]);
+    return producto;
+  } catch (err) {
+    console.error("Error al consultar: ", err);
+  } finally {
+    if (connection) connection.release(); // Devuelve la conexión al pool
+  }
+}
+
 
 export async function selectByCategory(categoryId) {
 

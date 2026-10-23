@@ -1,10 +1,14 @@
 import express from "express";
-import {insert, select, selectByCategory, selectGreaterThanPrice, 
+import {insert, select, selectById, selectByCategory, selectGreaterThanPrice, 
   selectLessThanPrice} from "../models/products.model.js";
 
 
 const getAllProducts =  async () => {
     return await select();
+};
+
+const getProductById = async (id) => {
+    return await selectById(id);
 };
 
 const getProductsByCategory = async (categoryId) => {
@@ -35,4 +39,4 @@ const addProduct = async (newProduct) => {
 };
 
 
-export default { getAllProducts, getProductsByCategory, getProductGreaterThanPrice, getProductLessThanPrice, addProduct };
+export default { getAllProducts, getProductById, getProductsByCategory, getProductGreaterThanPrice, getProductLessThanPrice, addProduct };
