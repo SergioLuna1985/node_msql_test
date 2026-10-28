@@ -14,11 +14,17 @@
   "license": "ISC",
   "type": "module",
   "dependencies": {
-    "cors": "^2.8.6",
-    "express": "^5.3.0",
-    "mysql2": "^3.24.6"
+    "cors": "2.8.6",
+    "express": "5.3.0",
+    "mysql2": "3.24.6"
   },
   "engines": {
     "node": "22.x"
+  },
+  "devDependencies": {
+    "standart": "6.1.0"
+  },
+  "eslintConfig": {
+    "extends": "standart"
   }
 }
